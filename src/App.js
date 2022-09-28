@@ -1,55 +1,32 @@
-import "./App.css";
-import Profile from "./image/ee.svg";
-import email from "./image/mail.svg";
-import pass from "./image/pass.svg";
-import back from "./image/55.svg";
+
+import './App.css';
+//import{BrowserRouter, Router,Routes,Route,Link,} from "react-router-dom"
+import Login from './components/Login/Login';
+
 
 function App() {
   return (
-    <div className="main">
-      <div className="sub-main">
-        <div>
-          <div className="img">
-            <div className="container">
-              <img src={Profile} alt="profile" className="profile" />
-            </div>
-          </div>
-          <div>
-            <h1>Login Page</h1>
-            <div>
-              <img
-                src={email}
-                width="30px"
-                height="20px"
-                alt="email"
-                className="mail"
-              />
-              <input className="os" type="text" placeholder="  User name" />
-            </div>
-            <div className="input2">
-              <img
-                src={pass}
-                width="30px"
-                height="20px"
-                alt="email"
-                className="mail"
-              />
+    <div className="App">
+      <header className="App-header">
+        <Login>
+          <form>
+            <input placeholder='Enter your email' type="email"/>
+            <input placeholder='Enter your password' type="password"/>
+          </form>
+        </Login>
 
-              <input className="os" type="password" placeholder="  Password" />
-            </div>
-            <div className="log">
-              <button>Login</button>
-            </div>
-            <div className="container2">
-              <input className="nm" type="radio" id="prof" name="nam" checked="checked" />
-              <label for="html">prof</label>
-               <br/>
-              <input className="nm" type="radio" id="admin" name="nam"  />
-              <label for="html">Admin</label>
-            </div>
-          </div>
-        </div>
-      </div>
+        {/* <Router>
+            <Routes>
+              <Route path='/' exact>
+               <Link to="/Register">Register</Link>
+                <Login></Login>
+              </Route>
+              <Route path='/Register' >
+                    <Register/>
+              </Route>
+            </Routes>
+        </Router> */}
+      </header>
     </div>
   );
 }
