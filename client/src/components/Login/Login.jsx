@@ -2,13 +2,26 @@ import React,{useState} from "react"
 import "./Login.scss"
 import logo from "./undraw_online_stats_0g94.svg"
 import welcomeImg from "./undraw_team_spirit_re_yl1v.svg"
+import Axios from 'axios'
 function Login(){
+
+
     const[emailval,setemailval]= useState("");
     const[passval,setpassval]= useState("");
   const handlesubmit=(event)=>{
     event.preventDefault();
-     
+    login();
   }
+
+  const login =()=>{
+    Axios.post("http://localhost:4003/login",{
+       username:emailval,
+       password:passval,
+    }).then((response)=>{
+      console.log(response);
+    })
+  }
+
   
     return(
        <div className="main-login">
@@ -30,7 +43,7 @@ function Login(){
           </div>
           <div className="right-side">
             <div className="welcomeNote">
-              <>Welcome Back!</>
+              <h3>Welcome Back!</h3>
             </div>
                <div className="welcomeImg">
                <img src={welcomeImg} alt="welcome" id="wel-img-id" />

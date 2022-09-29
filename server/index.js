@@ -1,24 +1,41 @@
 const express = require("express");
 const mysql = require("mysql");
-
-const app=(express);
-
+const cors = require("cors")
+const app= express();
+const Router = express.Router();
 app.use(express.json());
-
+app.use(cors())
 
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:"password",
-    database:"LoginSytesm",
+    password:"",
+    database:"Login",
 });
- 
-app.post('./register',(req,res)=>{
-    db.query("INSERT INTO users (username, password)VALUES(?,?)",[username,password],(err,result})=>{
-        console.log(err)
-    })
-})
 
-app.listen(4000,()=>{
-    console.log("runing server")
+
+
+
+Router.post('/login',(req,res)=>{
+    const username =req.body.username;
+    const password =req.body.password;
+
+    console.log("request");
+    db.query(
+        "SELECT * FROM Login WHERE Email=? AND password=?",
+        [username,password],(err,result)=>{
+            if(result.length > 0){
+                res.send(result);
+            }else{
+                res.send({
+                    message : "Check your password or your username"
+                })
+            }
+        }
+    )
+})
+app.use("/",Router);
+
+app.listen(4003,()=>{
+    console.log(`Server start on http://localhost:4003`);
 })
