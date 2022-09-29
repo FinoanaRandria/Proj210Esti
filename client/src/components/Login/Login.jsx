@@ -25,7 +25,7 @@ function Login(){
             <button type="submit" id="sub_butt">Login</button>
           </form>
           <div className="footer">
-            <h4> By Esti G13 </h4>
+            <h4> Esti </h4>
           </div>
           </div>
           <div className="right-side">

@@ -48,8 +48,8 @@ $main-color:hsl(197, 100%, 56%);
                border: none;
              }
              &:hover{
-                outline: 0.5px solid $main-color;
-               box-shadow: 0.5px 0.5px 6px -1px $main-color;
+                outline: 0.5px solid #ffbf00;
+               box-shadow: 0.5px 0.5px 6px -1px #ffbf00;
 
 
              }
@@ -66,7 +66,7 @@ $main-color:hsl(197, 100%, 56%);
          }
          #sub_butt{
             width: 80%;
-            background: $main-color;
+            background: #ffbf00;
             color: white;
             cursor: pointer;
             font-size: 16px;
@@ -86,6 +86,7 @@ $main-color:hsl(197, 100%, 56%);
           float: left;
           margin-left: 1rem;
           color: black;
+        
         }
       }
       .welcomeImg{
@@ -96,6 +97,9 @@ $main-color:hsl(197, 100%, 56%);
           object-fit: cover;
         }
       }
+     }
+     h4{
+       font-size: 23px;
      }
  }
 }
