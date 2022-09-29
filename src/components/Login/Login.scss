@@ -1,4 +1,4 @@
-$main-color:rgba(50, 242, 242, 0.938);
+$main-color:hsl(197, 100%, 56%);
 
 .main-login{
   min-height: 100vh;
@@ -19,7 +19,8 @@ $main-color:rgba(50, 242, 242, 0.938);
        margin:2rem;
        box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
        width: 80%;
-       height: 100%;
+       height: 80%;
+       border-radius: 20px;
      }
      .img-Class {
        height: 4rem;
@@ -71,12 +72,30 @@ $main-color:rgba(50, 242, 242, 0.938);
             font-size: 16px;
             border: none;
             padding: 0.5rem 1rem;
-            transition: all 0.5 ease;
+            transition: all 0.6 ease;
             &:hover{
                 box-shadow: 0.5px 0.5px 6px -1px black;
                 transform: translateY(-5px);
             }
          }
+     }
+
+     .right-side{
+      .welcomeNote{
+        h3{
+          float: left;
+          margin-left: 1rem;
+          color: black;
+        }
+      }
+      .welcomeImg{
+        height:50% ;
+        width: 70%;
+        #wel-img-id{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
      }
  }
 }

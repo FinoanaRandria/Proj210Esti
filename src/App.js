@@ -9,10 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Login>
-          <form>
-            <input placeholder='Enter your email' type="email"/>
-            <input placeholder='Enter your password' type="password"/>
-          </form>
+          
         </Login>
 
         {/* <Router>

@@ -1,6 +1,7 @@
 import React,{useState} from "react"
 import "./Login.scss"
 import logo from "./undraw_online_stats_0g94.svg"
+import welcomeImg from "./undraw_team_spirit_re_yl1v.svg"
 function Login(){
     const[emailval,setemailval]= useState("");
     const[passval,setpassval]= useState("");
@@ -23,8 +24,18 @@ function Login(){
             <input placeholder='Enter your password' type="password" value={passval} onChange={(e)=>{setpassval(e.target.value)}} id="pw1"/>
             <button type="submit" id="sub_butt">Login</button>
           </form>
+          <div className="footer">
+            <h4> By Esti G13 </h4>
           </div>
-          <div className="right-side"></div>
+          </div>
+          <div className="right-side">
+            <div className="welcomeNote">
+              <>Welcome Back!</>
+            </div>
+               <div className="welcomeImg">
+               <img src={welcomeImg} alt="welcome" id="wel-img-id" />
+               </div>
+          </div>
          </div>
           
        </div>
