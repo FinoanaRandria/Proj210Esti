@@ -24,8 +24,9 @@ Router.post('/login',(req,res)=>{
     db.query(
         "SELECT * FROM Login WHERE Email=? AND password=?",
         [username,password],(err,result)=>{
-            if(result.length > 0){
+            if(result && result.length > 0){
                 res.send(result);
+                //res.redirect("http://localhost:3000/home")
             }else{
                 res.send({
                     message : "Check your password or your username"
