@@ -1,0 +1,105 @@
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 80px;
+  
+  }
+  
+  nav ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+  }
+  
+  nav ul li{
+    font-size: 1.3rem;
+    font-weight: bold;
+    
+  }
+  .contentix{
+    display:  flex;
+    flex-direction: column;
+     gap: 10px;
+     margin: 10px;
+       
+  }
+   main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+   }
+   p{
+    font-size: 1.4rem;
+    font-weight: mediun;
+    color: gray;
+   }
+   .buttons{
+     display: flex;
+     gap: 10px;
+     cursor: pointer;
+     
+  
+   }
+   .cta{
+    font-weight: bold;
+    padding: 10px 20px;
+   }
+  
+   .hire{
+    background-color: #fff;
+    border: 2px solid #ffbf00;
+    color: #ffbf00;
+   }
+   .hire:hover{
+     background-color: #ffbf00;
+     color: #fff;
+   }
+  
+   .projects{
+    background-color: #fff;
+    border: 2px solid #ffbf00;
+    color: #ffbf00;
+   }
+   .projects:hover{
+     background-color: #ffbf00;
+     color: #fff;
+   }
+  
+  .h1x{
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  figure{
+    margin: 0;
+    position: relative;
+  
+  }
+  
+  .me-img{
+    width: 45% !important;
+    height: auto;
+    margin-left: 275px;
+  }
+  @media screen  and (min-width:800px) {
+    .contentix{
+      flex-direction: row;
+      margin: 80px;
+    }
+    .h1x{
+      font-size: 3.5rem;
+    }
+  
+    .cta{
+      font-weight: bold;
+      padding: 20px 30px;
+      font-size: 1.4rem;
+     }
+  }
+
+  a{
+    text-decoration: none;
+    color: rgb(58, 57, 57)
+  }
+  
