@@ -1,4 +1,6 @@
-
+body{
+  
+}
 nav{
     display: flex;
     justify-content: flex-end;
@@ -15,6 +17,7 @@ nav{
   nav ul li{
     font-size: 1.3rem;
     font-weight: bold;
+    
     
   }
   .contentix{
@@ -99,7 +102,7 @@ nav{
   }
 
   a{
-    text-decoration: none;
+    text-decoration: none !important;
     color: rgb(58, 57, 57)
   }
   

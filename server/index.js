@@ -35,6 +35,50 @@ Router.post('/login',(req,res)=>{
         }
     )
 })
+
+Router.get("/GestionProf/list",(req,res)=>{
+    db.query(`SELECT * FROM Login WHERE status = 0`,
+    (err,data)=>{
+        if(err){
+            console.log("Impossible de recuperer les donnees");
+        }else{
+            res.send(data)
+        }
+    })
+});
+
+Router.post("/GestionProf/supprimer/:id",(req,res)=>{
+    const id = req.params["id"];
+    console.log(id)
+    db.query(
+        `DELETE FROM Login WHERE id=${id}`,
+        (err,success) => {
+            if(err){
+                console.log("Impossible de suppprimer l'id"+id);
+            }else{
+                res.send({
+                    message : "Les informations ont bien ete supprimer"
+                })
+            }
+        }
+    )
+})
+
+Router.post("/GestionProf/ajouter",(req,res)=>{
+    const params = req.body;
+    db.query(
+        `INSERT INTO Login (Email,Password)
+        VALUES(?,?)
+        `,[params[0],params[1]],
+        (err,_) => {
+            if(err){
+                console.log("Impossible d'enregidtrer,",err);
+            }else{
+                console.log("success");
+            }
+        }
+    )
+});
 app.use("/",Router);
 
 app.listen(4003,()=>{

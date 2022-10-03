@@ -1,32 +1,17 @@
-import React from "react";
-import image from "./home.svg"
-import logo  from "./55.png"
-import './home.css'
-function Content({setValidation}) {
-    const log_out = _ => {
-        setValidation("disconnect");
-    }
+import React from 'react'
+import Section from './section'
+import { Outlet } from 'react-router-dom'
+import Navbar from './Navbar'
+function Content() {
   return (
-    <div className="contentix">
-      <main>
-        <div className="move">
-            <h1 className="h1x">Bienvenu <img src={logo} alt="img" width={40}/></h1>
-            <h1 className="h1x"> Sesion</h1>
-            <h1 className="h1x">Administrateur</h1>
-            <p className="colo">Esti</p>
+      
+        <div>
+            <Navbar />
+            <Outlet />
         </div>
-        <div className="buttons">
-             <button onClick={log_out} className="cta hire">Deconnexion</button>
-        </div>
-      </main>
-        <figure>
-             <img src={image} alt="image" className="me-img" width={30}/>
-             <div>
-
-             </div>
-        </figure>
-    </div>
-  );
+   
+    
+  )
 }
 
-export default Content;
+export default Content

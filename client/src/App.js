@@ -1,5 +1,6 @@
 
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from 'axios'
 import React,{useEffect,useState} from 'react';
 import{BrowserRouter,Routes,Route,Link} from "react-router-dom"
@@ -9,6 +10,9 @@ import Content from './components/home/Content'
 import Navbar1 from './components/HomeProfs/Navbar'
 import Content1 from './components/HomeProfs/Content'
 
+import Section from './components/home/section'
+import GestionProf from './components/home/GestionProf/GestionProf';
+import Crud from './components/home/GestionProf/Crud';
 
 function App() {
 
@@ -28,17 +32,42 @@ function App() {
       <header className="App-header">      
         <BrowserRouter>
           <Routes>
-              <Route exact path='/' element={
+              <Route path='/' element={
                  <Login setValidation={setValidation} />
               }>
               </Route>
-              <Route path='/home' element={
-                <div>
-                  <Navbar/>
-                  <Content setValidation={setValidation} />
-                </div>
+              <Route path='/home' element={ 
+                   <Content/>
               }>
+                   <Route index path='' element={ <Section validationLogin={validationLogin} setValidation={setValidation}/> }/>
+                    <Route path='planing' element={
+                      <div>
+                        <h1>Mbola ho fenoana</h1>
+                      </div>
+                    }/> 
+                    <Route path='gestioProf' element={
+                      <div>
+                        <GestionProf/>
+                      </div>
+                    }/>
                     
+                    <Route path='gestprofadd' element={
+                      <div>
+                        <Crud/>
+                      </div>
+                    }/>
+
+                    <Route path='gestioSalle' element={
+                      <div>
+                        <h1>Mbola ho fenoana Salle</h1>
+                      </div>
+                    }/>
+
+                    <Route path='ProfAttest' element={
+                      <div>
+                        <h1>Mbola ho fenoana Porf attest</h1>
+                      </div>
+                    }/>
               </Route>
             </Routes>
         </BrowserRouter>
