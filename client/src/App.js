@@ -3,44 +3,46 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Axios from 'axios'
 import React,{useEffect,useState} from 'react';
-import{BrowserRouter,Routes,Route,Link} from "react-router-dom"
+import{BrowserRouter,Routes,Route,Link,useNavigate} from "react-router-dom"
 import Login from './components/Login/Login';
 import Navbar from './components/home/Navbar'
 import Content from './components/home/Content'
 import Navbar1 from './components/HomeProfs/Navbar'
-import Content1 from './components/HomeProfs/Content'
+
 
 import Section from './components/home/section'
 import GestionProf from './components/home/GestionProf/GestionProf';
 import Crud from './components/home/GestionProf/Crud';
+//Prof home 
+import Content1 from './components/HomeProfs/Content'
 
 function App() {
-
+  const navigate = useNavigate();
   const [validationLogin,setValidation] = useState(null);
     useEffect( _ => {
       console.log("valid :",validationLogin);
       if(validationLogin!= null && validationLogin != "disconnect" && validationLogin.length == 1){
-        alert("redirection");
-        window.location.href = "/home"
+         console.warn("redirection");
+         navigate("/home")
        }else if(validationLogin == "disconnect"){
-          window.location.href = "/"
+          navigate("/");
        }
     },[validationLogin]);
 
   return (
     <div className="App">
       <header className="App-header">      
-        <BrowserRouter>
           <Routes>
               <Route path='/' element={
                  <Login setValidation={setValidation} />
               }>
               </Route>
               <Route path='/home' element={ 
-                   <Content/>
+                   <Content validationLogin={validationLogin} />
               }>
-                   <Route index path='' element={ <Section validationLogin={validationLogin} setValidation={setValidation}/> }/>
-                    <Route path='planing' element={
+                   <Route index path='' element={ (validationLogin != null) && (validationLogin[0].status == 1 && 1) ? <Section validationLogin={validationLogin} setValidation={setValidation}/> :  <Content1 validationLogin={validationLogin} setValidation={setValidation} /> }/>
+          
+                   <Route path='planing' element={
                       <div>
                         <h1>Mbola ho fenoana</h1>
                       </div>
@@ -53,7 +55,7 @@ function App() {
                     
                     <Route path='gestprofadd' element={
                       <div>
-                        <Crud/>
+                        <Crud navigate={navigate}/>
                       </div>
                     }/>
 
@@ -70,7 +72,6 @@ function App() {
                     }/>
               </Route>
             </Routes>
-        </BrowserRouter>
             
       
       </header>

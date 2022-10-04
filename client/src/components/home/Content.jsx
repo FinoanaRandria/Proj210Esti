@@ -2,11 +2,11 @@ import React from 'react'
 import Section from './section'
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
-function Content() {
+function Content({validationLogin}) {
   return (
       
         <div>
-            <Navbar />
+            <Navbar validationLogin={validationLogin} />
             <Outlet />
         </div>
    

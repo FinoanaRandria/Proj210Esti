@@ -1,5 +1,45 @@
-.bodyx{ background-color: #1fbfff;
-  margin-top: 150px;
+.bodyx{ background-color: rgba(236,236,236,0.7);
+  margin:2rem;
+  box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+  width: 80%;
+  height: 80%;
   border-radius: 20px;
+}
+
+.container{
+  height: 75vh;
+   width: 80%;
+   background: linear-gradient(to right,#fff 50%,hsl(197, 100%, 56%) 50%);  
+   border-radius: 1rem;
+   margin: 2rem auto;
+   box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1px;
+}
+
+.crudadd{
+  height: 75vh;
+   width: 80%;
+   background: linear-gradient(to right bottom,rgba(236,236,236,0.7),rgba(236,236,236,0.4));
+   border-radius: 1rem;
+   margin: 2rem auto;
+   box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 50px;
+}
+
+.lab {
+ color: grey;
+}
+
+.adda {
+  width: 45% !important;
+    height: auto;
+  display: flex;
+  margin-right: 160px;
 }
 

@@ -9,7 +9,7 @@ function Section({validationLogin,setValidation}) {
     }
     useEffect(()=>{
       if(validationLogin == null || validationLogin == "disconnect"){
-        //setValidation("disconnect");
+          setValidation("disconnect");
       }
     },[]);
   return (
