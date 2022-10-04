@@ -22,7 +22,7 @@ function Crud({navigate}) {
     <div className="main1">
       <div className="cont1">
         <div className="crudadd">
-            <img className="adda" src={add} width={303} alt="add"/>
+            <img className="addax" src={add} width={303} alt="add"/>
       <input className="lab" onChange={(e)=> setEmail(e.target.value)}   type="text" name="Email"/>
          <input className="lab"  onChange={(e)=> setPassword(e.target.value)}  type="text" name="Password"/>
         <button className="btn btn-success " onClick={()=> ajouter()}>Ajouter</button>

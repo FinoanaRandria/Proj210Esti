@@ -29,7 +29,7 @@ function GestionProf() {
 
   return (
     <div>
-      <img src={im} width={303} alt="im" />
+      <img className="imgp" src={im} width={303} alt="im" />
       <div className="container">
         <div className="bodyx">
           <Link

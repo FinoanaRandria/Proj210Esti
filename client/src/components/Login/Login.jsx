@@ -3,6 +3,7 @@ import "./Login.scss"
 import logo from "./undraw_online_stats_0g94.svg"
 import welcomeImg from "./undraw_team_spirit_re_yl1v.svg"
 import Axios from 'axios'
+import logos from "./logos.png"
 function Login({setValidation}){
 
 
@@ -40,7 +41,7 @@ function Login({setValidation}){
             <button type="submit" id="sub_butt">Connexion</button>
           </form>
           <div className="footer">
-            <h4> Esti </h4>
+            <img src={logos} alt="logos" width={40}/>
           </div>
           </div>
           <div className="right-side">
