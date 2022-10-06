@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./GestionProf.css";
 import axios from "axios";
 import im from "./imgGP.svg";
+
 function GestionProf() {
   const delete_function = (id) => {
     axios

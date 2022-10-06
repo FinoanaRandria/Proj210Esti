@@ -9,12 +9,13 @@ import Navbar from './components/home/Navbar'
 import Content from './components/home/Content'
 import Navbar1 from './components/HomeProfs/Navbar'
 
-
+import Module from './components/home/Module';
 import Section from './components/home/section'
 import GestionProf from './components/home/GestionProf/GestionProf';
 import Crud from './components/home/GestionProf/Crud';
 //Prof home 
 import Content1 from './components/HomeProfs/Content'
+import Etudiant from './components/home/Etudiant';
 
 function App() {
   const navigate = useNavigate();
@@ -70,6 +71,19 @@ function App() {
                         <h1>Mbola ho fenoana Porf attest</h1>
                       </div>
                     }/>
+                     <Route path='Module' element={
+                         <Module/>
+                     }>
+
+                     <Route path='Etudiant' element={
+                      <h1> test</h1>
+                     }
+
+                     />
+ 
+
+                      
+                     </Route>
               </Route>
             </Routes>
             

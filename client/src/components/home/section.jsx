@@ -26,7 +26,7 @@ function Section({validationLogin,setValidation}) {
         </div>
       </main>
         <figure>
-             <img src={image} alt="image" className="me-img" width={30}/>
+             <img src={image} alt="imagex" className="me-img" width={30}/>
              <div>
 
              </div>

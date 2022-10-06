@@ -2,6 +2,7 @@ import React from "react";
 import homex  from "./homex.svg"
 import logo  from "./55.png"
 import './prof.css'
+import logoc from "../Login/logos.png"
 function Content1({setValidation}) {
     const log_out = _ => {
         setValidation("disconnect");
@@ -13,7 +14,8 @@ function Content1({setValidation}) {
             <h1 className="h1x">Bienvenu <img src={logo} alt="img" width={40}/></h1>
             <h1 className="h1x"> Sesion</h1>
             <h1 className="h1x">Prof</h1>
-            <p className="colo">Esti</p>
+            <img src={logoc} alt="logos" width={75}/>
+            
         </div>
         <div className="buttons">
              <button onClick={log_out} className="cta hire">Deconnexion</button>
