@@ -10,8 +10,10 @@ const db = mysql.createConnection({
     user:"root",
     host:"localhost",
     password:"",
-    database:"Login",
+    database:"Esti_EDT",
 });
+
+
 
 
 
@@ -79,6 +81,41 @@ Router.post("/GestionProf/ajouter",(req,res)=>{
         }
     )
 });
+
+Router.get("/Module",(req,res)=>{
+    db.query(
+        `SELECT * FROM Module
+        `,
+        (err,values) => {
+            if(err){
+                console.log("Impossible d'enregidtrer,",err);
+            }else{
+                console.log("success to get module");
+                res.send({
+                    data  : values
+                })
+            }
+        }
+    )
+});
+Router.post("/Module/delete/:id",(req,res)=>{
+    const params = req.params;
+    db.query(
+        `DELETE FROM Module WHERE ID=${params.id}
+        `,
+        (err,values) => {
+            if(err){
+                console.log("Impossible de supprimer ce module,",err);
+            }else{
+                console.log("success to delete");
+                res.send({
+                    message : "Success to delete module"
+                })
+            }
+        }
+    )
+});
+
 app.use("/",Router);
 
 app.listen(4003,()=>{

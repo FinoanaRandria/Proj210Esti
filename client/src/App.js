@@ -16,6 +16,7 @@ import Crud from './components/home/GestionProf/Crud';
 //Prof home 
 import Content1 from './components/HomeProfs/Content'
 import Etudiant from './components/home/Etudiant';
+import Facture from './components/home/Facture';
 
 function App() {
   const navigate = useNavigate();
@@ -73,17 +74,25 @@ function App() {
                     }/>
                      <Route path='Module' element={
                          <Module/>
-                     }>
+                     }/>
 
                      <Route path='Etudiant' element={
-                      <h1> test</h1>
+                       <Etudiant/>
                      }
 
                      />
+
+                    <Route path='Facture' element={
+                       <Facture/>
+                     }
+
+                     />
+
+                     
  
 
                       
-                     </Route>
+                     
               </Route>
             </Routes>
             
