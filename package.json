@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "bootstrap": "^5.2.1"
+    "@sendgrid/mail": "^7.7.0",
+    "axios": "^1.1.2",
+    "bootstrap": "^5.2.1",
+    "env-cmd": "^10.1.0",
+    "express-draft": "^1.0.4",
+    "googleapis": "^108.0.0",
+    "react-google-login": "^5.2.2",
+    "tsparticles": "^2.3.4"
   }
 }

@@ -4,7 +4,12 @@ const cors = require("cors")
 const app= express();
 const Router = express.Router();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+
+const createError = require('http-errors');
+const morgan = require('morgan');
+
+require('dotenv').config();
 
 const db = mysql.createConnection({
     user:"root",
@@ -12,9 +17,6 @@ const db = mysql.createConnection({
     password:"",
     database:"Esti_EDT",
 });
-
-
-
 
 
 
@@ -115,8 +117,15 @@ Router.post("/Module/delete/:id",(req,res)=>{
         }
     )
 });
+Router.get("/",(req,res)=>{
+    res.json({
+        "message" : "mande be le izy"
+    })
+});
 
 app.use("/",Router);
+app.use('/api', require('./routes/api.route'));
+
 
 app.listen(4003,()=>{
     console.log(`Server start on http://localhost:4003`);
