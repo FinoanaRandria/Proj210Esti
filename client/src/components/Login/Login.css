@@ -58,6 +58,10 @@ body,input{
         transition: 1s 0.7s ease-in-out;
 
 }
+.imx{
+    width: 100%;
+    height: 500px;
+}
 
 form{
     display: flex;

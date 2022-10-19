@@ -1,11 +1,20 @@
-import React from 'react'
+import React,{useEffect,useRef} from 'react'
 import "./Login.css"
-import log from "../img/log.svg"
 
+import Lottie from 'lottie-web'
 
 
 function Login() {    
-
+  const container =useRef(null)
+  useEffect(()=>{
+     Lottie.loadAnimation({
+      container:container.current,
+      renderer:'svg',
+      loop:true,
+      autoplay:true,
+      animationData:require('../img/getin.json')
+     })
+  },[])
   return (
     <div className="container">
 
@@ -70,7 +79,7 @@ function Login() {
               <button className="btn transparent" id="sign-up-btn">Sign Up</button>
            </div>
               
-              <img src={log} className="image" alt=""/>
+              <div className='im' ref={container} />
         </div>
 
 
@@ -83,7 +92,7 @@ function Login() {
              <button className="btn transparent" id="sign-in-btn">Sign In</button>
           </div>
            
-             {/*  <img src="img/register.gif" className="image" alt="">  */}
+            
        </div>
       </div>
 
